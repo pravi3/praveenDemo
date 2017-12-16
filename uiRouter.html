@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>UiRouter</title>
+    <link rel="stylesheet" href="/css/bootstrap-3.3.7/dist/css/bootstrap.css">
+    <link rel="icon" href="img/S-logo.png" >
+    <script src="js/angular.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+    <script src="js/angular-animate.js"></script>
+    <script src="js/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="js/uiRouter.js"></script>
+    <script src="js/service/httpService.js"></script>
+    <script src="js/directive/appDirectives.js"></script>
+</head>
+
+<style>
+    .left {
+        position: fixed;
+        width: 18%;
+        height: 520px;
+        overflow: scroll;
+    }
+    
+    .li-no-style {
+        list-style: none outside none;
+        display: table-cell;
+    }
+    
+    .right {
+        position: fixed;
+        width: 80%;
+        margin-left: 25%;
+    }
+    
+    .left-nav {
+        padding-left: 0px;
+        left: 8px;
+        top: 65px;
+    }
+    
+    .brand-img-loc {
+        padding-left: 15px;
+        padding-top: 5px;
+        position: relative;
+    }
+    
+    .tution-name-position {
+        position: absolute;
+        left: 0;
+        color: white;
+        font: bold 24px/45px Helvetica, Sans-Serif;
+        letter-spacing: 1px;
+        padding: 10px;
+        top: 1px;
+        right: 32px;
+        padding-right: 7px;
+        padding-left: 48px;
+    }
+    .ag-topic{
+        color: red;
+        background-color: #222222;
+        letter-spacing: 1px;
+    }
+</style>
+
+<body ng-app="app">
+
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="navbar-header">
+        <a class="navbar-brand brand-img-loc" ui-sref="#">
+            <img src="img/angularjs-for-header-only.svg" alt="AngularJs" style="width: 130px;height: 30px">
+            
+            <div class="tution-name-position"><span style="font-size: 10px;color: red">Rasan</span><span style="font-size: 10px;">Tutorials</span></div>
+
+        </a>
+    </div>
+    <div>
+        <ul class="nav navbar-nav" style="padding-left: 26px;">
+            <li style="cursor:pointer"><a ui-sref="home">Home</a></li>
+            <li style="cursor:pointer"><a ui-sref="about">About</a></li>
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li style="cursor:pointer"><a ui-sref="#">SingIn</a></li>
+            <li style="cursor:pointer"><a ui-sref="signUp">SingUp</a></li>
+        </ul>
+    </div>
+</nav>
+    <nav>
+        <div ng-controller="accordinaCtrl">
+            <script type="text/ng-template" id="group-template.html">
+                <li style="text-align: center;text">
+                    <uib-accordion close-others="oneAtATime">
+
+                        <div uib-accordion-group class="panel-default" is-open="status.open" class="ag-topic">
+                            <uib-accordion-heading>
+                                {{topicName}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                            </uib-accordion-heading>
+                            <ul class='li-no-style pull-left' >
+                               <li ng-repeat="topic in topics">
+                                   <a href="{{topic.pageHref}}" >
+                                       {{topic.topicName}}
+                                   </a>
+                                   <hr>
+                               </li>
+                            </ul>
+                        </div>
+
+                    </uib-accordion>
+                </li>
+            </script>
+            <div class="grid-left ">
+                <ul class="nav-list naked-list">
+                    <ul class="aside-nav left li-no-style left-nav">
+                        <div ag-topics topic-name="{{accordian.topicName}}" topics="accordian.topics" ng-repeat="accordian in accordianContent"></div>
+                        <hr>
+                    </ul>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="right">
+        <div ui-view></div>
+    </div>
+    
+   
+</body>
+
+
+</html>
