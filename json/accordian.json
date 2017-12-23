@@ -1,46 +1,23 @@
-[{"topicName": "AngularJs Fundanmentals",
-            "topics": [{
-                    "topicName": "MVC",
-                    "pageHref": "pageHref"
+[{
+        "topicName": "AngularJs Fundanmentals",
+        "topics": [{
+                "topicName": "MVC",
+                "pageHref": "pageHref"
                 },
-                {
-                    "topicName": "Dependency Injection",
-                    "pageHref": "pageHref"
+            {
+                "topicName": "Dependency Injection",
+                "pageHref": "pageHref"
                 },
-                {
-                    "topicName": "SingleTon Design Pattern",
-                    "pageHref": "pageHref"
+            {
+                "topicName": "SingleTon Design Pattern",
+                "pageHref": "pageHref"
                 },
-                {
-                    "topicName": "SPA",
-                    "pageHref": "pageHref"
+            {
+                "topicName": "SPA",
+                "pageHref": "pageHref"
                 },
-                {
-                    "topicName": "{{Expressions}}",
-                    "pageHref": "pageHref"
+            {
+                "topicName": "{{Expressions}}",
+                "pageHref": "pageHref"
                 }]
-},
- {"topicName": "AngularJs Fundanmentals",
-            "topics": [{
-                    "topicName": "MVC",
-                    "pageHref": "pageHref"
-                },
-                {
-                    "topicName": "Dependency Injection",
-                    "pageHref": "pageHref"
-                },
-                {
-                    "topicName": "SingleTon Design Pattern",
-                    "pageHref": "pageHref"
-                },
-                {
-                    "topicName": "SPA",
-                    "pageHref": "pageHref"
-                },
-                {
-                    "topicName": "{{Expressions}}",
-                    "pageHref": "pageHref"
-                }]
- }
-
 ]
