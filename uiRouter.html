@@ -13,6 +13,7 @@
     <script src="js/uiRouter.js"></script>
     <script src="js/service/httpService.js"></script>
     <script src="js/directive/appDirectives.js"></script>
+    <script src="js/service/sUtility.js"></script>
 
 </head>
 
@@ -30,7 +31,7 @@
     }
     
     .right {
-       /* position: absolute;
+        /* position: absolute;
         width: 80%;*/
         margin-left: 25%;
     }
@@ -65,15 +66,19 @@
         background-color: #222222;
         letter-spacing: 1px;
     }
-    img {
-        z-index: -1;
+    
+    .pointer {
+        cursor: pointer;
+    }
+    ol{
+        list-style-type: none
     }
 </style>
 
 <body ng-app="app">
-   <div style="position: fixed;width: 100%;z-index: 1">
-    <!--Header-->
-    
+    <div style="position: fixed;width: 100%;z-index: 1">
+        <!--Header-->
+
         <nav class="navbar navbar-inverse" role="navigation">
             <div class="navbar-header">
                 <a class="navbar-brand brand-img-loc" ui-sref="#">
@@ -94,23 +99,22 @@
                 </ul>
             </div>
         </nav>
-     </div>
-   
+    </div>
+
     <!--Header ends-->
     <div class="container">
         <nav>
-            <div ng-controller="accordinaCtrl">
+            <div ng-controller="accordianCtrl">
                 <script type="text/ng-template" id="group-template.html">
                     <li style="text-align: center;text">
                         <uib-accordion close-others="oneAtATime">
-
                             <div uib-accordion-group class="panel-default" is-open="status.open" class="ag-topic">
                                 <uib-accordion-heading>
                                     {{topicName}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                                 </uib-accordion-heading>
                                 <ul class='li-no-style pull-left'>
-                                    <li ng-repeat="topic in topics">
-                                        <a href="{{topic.pageHref}}">
+                                    <li ng-repeat="topic in topics" class="pointer">
+                                        <a ng-click="scrollTo(topic.id)">
                                        {{topic.topicName}}
                                    </a>
                                         <hr>
@@ -135,7 +139,7 @@
     </div>
     <div style="padding-top: 5%">
         <div class="right">
-                <div ui-view></div>
+            <div ui-view></div>
         </div>
     </div>
 </body>
