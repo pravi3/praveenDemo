@@ -1,0 +1,69 @@
+<h2>JavaScript Design Patterns</h2>
+
+<a ng-click="scrollTo('module')">Modular Design Pattern</a><br>
+<a ng-click="scrollTo('mvc')">MVC Design Pattern</a><br>
+<a ng-click="scrollTo('singleTon')">SingleTon Design Pattern</a><br>
+
+<hr>
+
+<p id="module" style='background-color: aliceblue'>
+    <h3>Moduler Design Pattern</h3>
+    <strong>JavaScript modules are the most prevalently used design patterns for keeping particular pieces of code independent of other components.</strong>
+    <div>Angular Uses this Design pattern as follows.<br>
+        <strong style="background: yellow">angular.module('module-name',[])</strong>
+    </div>
+
+    <s-image width="545px" url="/img/angular_module.png"></s-image>
+
+
+</p><br>
+<hr>
+
+<p id="mvc">
+    <h3>Model View Controller</h3>
+    <strong>The name of the pattern consists of the names of its actors: Model - stores an application data; View - renders Model for a client; and Controller - updates Model by reacting on client's actions.</strong><br>
+    <s-image width="545px" url="/img/mvc.jpg"></s-image>
+
+    <ul>
+        <li><strong>Model:</strong>Represents the Domain Data</li>
+        <li><strong>View: </strong>Represents the Html page</li>
+        <li><strong>Controller : </strong>Processes and responds to events, typically user actions, and invokes changes on the model and perhaps the view(In Simple it represents Javascript)</li>
+    </ul>
+</p>
+<hr>
+
+<p id="singleTon">
+    <h3>Single Ton</h3>
+    <strong>The Singleton Pattern limits the number of instances of a particular object to just one. This single instance is called the singleton.</strong>
+    <div><br><br>
+        <ol class="linenums">
+            <li class="L0"><span class="kwd">var</span><span class="pln"> </span><span class="typ">Singleton</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="pun">(</span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li>
+            <li class="L1"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> instance</span><span class="pun">;</span></li>
+            <li class="L2"><span class="pln">&nbsp;</span></li>
+            <li class="L3"><span class="pln">    </span><span class="kwd">function</span><span class="pln"> createInstance</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li>
+            <li class="L4"><span class="pln">        </span><span class="kwd">var</span><span class="pln"> </span><span class="kwd">object</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Object</span><span class="pun">(</span><span class="str">"I am the instance"</span><span class="pun">);</span></li>
+            <li class="L5"><span class="pln">        </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">object</span><span class="pun">;</span></li>
+            <li class="L6"><span class="pln">    </span><span class="pun">}</span></li>
+            <li class="L7"><span class="pln">&nbsp;</span></li>
+            <li class="L8"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> </span><span class="pun">{</span></li>
+            <li class="L9"><span class="pln">        getInstance</span><span class="pun">:</span><span class="pln"> </span><span class="kwd">function</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li>
+            <li class="L0"><span class="pln">            </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(!</span><span class="pln">instance</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></li>
+            <li class="L1"><span class="pln">                instance </span><span class="pun">=</span><span class="pln"> createInstance</span><span class="pun">();</span></li>
+            <li class="L2"><span class="pln">            </span><span class="pun">}</span></li>
+            <li class="L3"><span class="pln">            </span><span class="kwd">return</span><span class="pln"> instance</span><span class="pun">;</span></li>
+            <li class="L4"><span class="pln">        </span><span class="pun">}</span></li>
+            <li class="L5"><span class="pln">    </span><span class="pun">};</span></li>
+            <li class="L6"><span class="pun">})();</span></li>
+            <li class="L7"><span class="pln">&nbsp;</span></li>
+            <li class="L8"><span class="kwd">function</span><span class="pln"> run</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></li>
+            <li class="L9"><span class="pln">&nbsp;</span></li>
+            <li class="L0"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> instance1 </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Singleton</span><span class="pun">.</span><span class="pln">getInstance</span><span class="pun">();</span></li>
+            <li class="L1"><span class="pln">    </span><span class="kwd">var</span><span class="pln"> instance2 </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Singleton</span><span class="pun">.</span><span class="pln">getInstance</span><span class="pun">();</span></li>
+            <li class="L2"><span class="pln">&nbsp;</span></li>
+            <li class="L3"><span class="pln">    alert</span><span class="pun">(</span><span class="str">"Same instance? "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> </span><span class="pun">(</span><span class="pln">instance1 </span><span class="pun">===</span><span class="pln"> instance2</span><span class="pun">));</span><span class="pln">  </span></li>
+            <li class="L4"><span class="pun">}</span></li>
+        </ol>
+    </div>
+</p><br>
+<br>
+<br>
