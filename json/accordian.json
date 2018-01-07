@@ -11,6 +11,14 @@
         {
             "topicName": "SingleTon Design Pattern",
             "id": "singleTon"
+                },
+        {
+            "topicName": "Two Way Data Binding",
+            "id": "twoWayData"
+                },
+        {
+            "topicName": "Dependency Injection",
+            "id": "di"
                 }
             ]
 }]
