@@ -106,9 +106,10 @@
         <nav>
             <div ng-controller="accordianCtrl">
                 <script type="text/ng-template" id="group-template.html">
-                    <li style="text-align: center;text">
+                    <li style="text-align: center;" class="pointer">
                         <uib-accordion close-others="oneAtATime">
-                            <div uib-accordion-group class="panel-default" is-open="status.open" class="ag-topic">
+                            <div uib-accordion-group class="panel-default" is-open="status.open" class="ag-topic" ui-sref="{{refId}}">
+                               <div></div>
                                 <uib-accordion-heading>
                                     {{topicName}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                                 </uib-accordion-heading>
@@ -128,7 +129,7 @@
                 <div class="grid-left ">
                     <ul class="nav-list naked-list">
                         <ul class="aside-nav left li-no-style left-nav">
-                            <div ag-topics topic-name="{{accordian.topicName}}" topics="accordian.topics" ng-repeat="accordian in accordianContent"></div>
+                            <div ag-topics topic-name="{{accordian.topicName}}" topics="accordian.topics" ref-id="{{accordian.referenceId}}" ng-repeat="accordian in accordianContent"></div>
                             <hr>
                         </ul>
 
@@ -137,6 +138,7 @@
             </div>
         </nav>
     </div>
+   
     <div style="padding-top: 5%">
         <div class="right">
             <div ui-view></div>

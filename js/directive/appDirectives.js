@@ -3,10 +3,12 @@ app.directive('agTopics', function () {
     return {
         scope: {
             topicName: '@',
-            topics: '='
+            topics: '=',
+            refId:'@'
         },
         templateUrl: "group-template.html",
         link: function ($scope) {
+            console.log("*******>>>"+$scope.refId+"**************************>>>>>")
             $scope.oneAtATime = true;
             $scope.status = {
                 isCustomHeaderOpen: false,
@@ -40,5 +42,20 @@ app.directive('sImage', function () {
 
     }
 });
+
+app.directive('sScrollTo',['sUtility',function(sUtility){
+    return{
+        scope: {
+            id:'@',
+            display:'@'
+        },
+        template:'<a ng-click="scrollTo(id)">{{display}}</a><br>',
+        link:function(scope,element,attr){
+              scope.scrollTo = function (id) {
+                sUtility.scrollToHash(id);
+    };
+        }
+    }
+}])
 
 

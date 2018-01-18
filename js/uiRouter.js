@@ -10,7 +10,12 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
 
     $stateProvider.state('agFundamentals', {
         url: '/agFundamentals',
-        templateUrl: '../views/ag_fundamentals/design_patterns.html',
+        templateUrl: 'views/ag_fundamentals/design_patterns.html',
+        controller: 'common-ctrl'
+    })
+    .state('agCore',{
+        url: '/agCore',
+        templateUrl: 'views/agCore.html',
         controller: 'common-ctrl'
     })
 
@@ -26,12 +31,12 @@ app.controller('accordianCtrl', ['$scope', 'httpService', 'sUtility', function (
     $scope.scrollTo = function (id) {
         sUtility.scrollToHash(id);
     };
+    
+   
  }]);
 
 app.controller('common-ctrl', ['$scope', 'sUtility', function ($scope, sUtility) {
     $scope.scrollTo = function (id) {
         sUtility.scrollToHash(id);
     };
-
-
 }]);

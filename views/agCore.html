@@ -1,0 +1,105 @@
+<h2>Angular Core Concepts</h2>
+
+<a ng-click="scrollTo('watch')">$Watch</a><br>
+<a ng-click="scrollTo('apply')">$Apply</a><br>
+<a ng-click="scrollTo('digest')">$Digest</a><br>
+
+
+
+
+<hr>
+
+<p id="watch" style='background-color: aliceblue'>
+    <h3>$Watchers</h3>
+    <strong>Watchers are angualar functions which detects the modifications happened on scope variables</strong>
+    <ul>
+        <li>By default angular creates the watchers to users</li>
+        <li>Manually user can also apply watchers on scope variables</li>
+    </ul>
+<div>
+    <strong>Default Watchers created by AngularJs</strong><br>
+    <ul>
+        <li>If scope/rootScope properties used inside html only for those angular creates watchers not for unUsed properties
+            <div>
+                <label>Example: </label>
+                <s-image width="745px" url="img/watch_1.jpg"></s-image><br>
+                As per above image<br>
+                1.Angular creates two watchers by default, even though we have user object with address property in js ,since we not using user.address inside html no watcher is created by default by angular <br>
+                <label>Why angular created only two watchers.?</label><br>
+                Ans: Because there is only two possible way of modification of property.<br>
+                we can update user property value inside text box. OR <br>
+                we can update/change user property in side expression <br>
+                "{user.name+" append some value}".<br>
+                Because of above resion angular creates only two watchers as per example shown above.
+                
+                
+            </div>
+        </li><br>
+        <li>Manually user can also apply watchers on scope variables
+           <div>
+               <label>Example:</label>
+               <s-image width="745px" url="img/watch_2.jpg"></s-image><br> 
+               <label>3.&nbsp; </label>user can creates watchers manually on scope property so that angular will consider defined watch function for total watch count.
+           </div>       
+           </li>
+        <li>
+            Above watch function can apply only on primitive data type defined on $scope object. <br>
+            what if for custom object type.
+            <div>
+                <label for="">Example: </label> 
+                $scope.user={"name":"ABC","age":45,"address":"XYZ"} <br>
+                how to observe changes happen on property of person object <br>
+                To observe changes happen custom object watch function similler to above example 
+                will be used but watch function take thrid argument as boolean <strong > TRUE</strong>  <br>
+                <s-image width="745px" url="img/deep_watch.jpg"></s-image><br>  
+                if any property on user object changed watch function will be trigged        
+            </div>
+            
+        </li><br>
+           <li>
+               what if for object type as array.To watch changes on array angularjs having function called <strong>$watchCollection</strong><br>
+                <s-image width="745px" url="img/deep_watch_array.jpg"></s-image><br>
+               
+           </li>
+            
+    </ul>
+</div>
+
+
+</p>
+<hr>
+
+<p id="apply">
+    <h3>$Apply</h3>
+    <strong>Used as: $scope.$apply()</strong> <br>
+    If code is not a part of angular js context angular can't able observe changes happened on code.
+    <strong>Example: 
+        <ul>
+            <li>if Jquery is used for handling click event then changes happen inside click function not observed angular js, even angular code present inside function angular unable to observe changes
+                
+            </li>
+            <li>Simller to above example if onClick function used inside html angular js doesn't observe changes </li>
+            <li>But instead of above two approach if we use ng-click ,changes are observed by angular js</li>
+            <s-image width="745px" url="img/apply_1.jpg"></s-image><br>
+            By looking into above example when click event called using  ng-click directive
+            changes are observed because all built in directive by default calls $apply function after execution of defined function of angularjs <br>
+            When used manually calling $apply means user is trigging all watch function created on application (include angular created and user created) means angular calls all watchers starts from $rootscope followed by child scope object($scope) this event make angular to update with latest value on entire application. <br>
+             <s-image width="845px" url="img/apply_2.jpg"></s-image><br>
+            
+        </ul>
+    </strong>
+    
+
+</p>
+
+<hr>
+
+<p id="digest">
+    <h3>$Digest</h3>
+    <strong>Used as: $scope.$digest() <br>
+    it functions similer to $apply function but $digest function helps to improve the perfomance of application because <br>
+    $scope.$digest() : calls on surrounding scope watchers it doesn't call watcher of rootscope or any other socpe <br>
+    <s-image width="845px" url="img/apply_3.jpg"></s-image><br>
+    </strong> <br>
+</p>
+
