@@ -18,6 +18,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         templateUrl: 'views/agCore.html',
         controller: 'common-ctrl'
     })
+    .state('agFilter',{
+        url: '/agFilter',
+        templateUrl: 'views/filter.html',
+        controller: 'common-ctrl'
+    })
 
 }]);
 
@@ -39,4 +44,24 @@ app.controller('common-ctrl', ['$scope', 'sUtility', function ($scope, sUtility)
     $scope.scrollTo = function (id) {
         sUtility.scrollToHash(id);
     };
+     $scope.records = [
+    {
+      "name" : "Alfreds Futterkiste",
+      "country" : "Germny"
+    },
+    
+    {
+      "name" : "Ernst Hndel",
+      "country" : "Austria"
+    },
+    {
+      "name" : "Centro comercil Moctezum",
+      "country" : "Mexico"
+    },
+    {
+      "name" : "Berglunds snabbköp",
+      "country" : "Sweden"
+    },
+  ]
+        
 }]);

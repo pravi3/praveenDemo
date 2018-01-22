@@ -1,41 +1,89 @@
-[{
+[
+  {
     "topicName": "AngularJs Fundanmentals",
-    "referenceId":"agFundamentals",
-    "topics": [{
-            "topicName": "Modular Design Pattern",
-            "id": "module"
-                },
-        {
-            "topicName": "MVC Desing Pattern",
-            "id": "mvc"
-                },
-        {
-            "topicName": "SingleTon Design Pattern",
-            "id": "singleTon"
-                },
-        {
-            "topicName": "Two Way Data Binding",
-            "id": "twoWayData"
-                },
-        {
-            "topicName": "Dependency Injection",
-            "id": "di"
-                }
-            ]
-},{
+    "referenceId": "agFundamentals",
+    "topics": [
+      {
+        "topicName": "Modular Design Pattern",
+        "id": "module"
+      },
+      {
+        "topicName": "MVC Desing Pattern",
+        "id": "mvc"
+      },
+      {
+        "topicName": "SingleTon Design Pattern",
+        "id": "singleTon"
+      },
+      {
+        "topicName": "Two Way Data Binding",
+        "id": "twoWayData"
+      },
+      {
+        "topicName": "Dependency Injection",
+        "id": "di"
+      }
+    ]
+  },
+  {
     "topicName": "AngularJs Core",
-    "referenceId":"agCore",
-    "topics": [{
-            "topicName": "$Watchers",
-            "id": "watch"
-                },
-        {
-            "topicName": "$Apply",
-            "id": "apply"
-                },
-        {
-            "topicName": "$Digest",
-            "id": "digest"
-                }
-            ]
-}]
+    "referenceId": "agCore",
+    "topics": [
+      {
+        "topicName": "$Watchers",
+        "id": "watch"
+      },
+      {
+        "topicName": "$Apply",
+        "id": "apply"
+      },
+      {
+        "topicName": "$Digest",
+        "id": "digest"
+      }
+    ]
+  },
+  
+  {
+    "topicName": "Angular Filters",
+    "referenceId": "agFilter",
+    "topics": [
+      {
+        "topicName": "UpperCase",
+        "id": "uc"
+      },
+      {
+        "topicName": "LowerCase",
+        "id": "lc"
+      },
+      {
+        "topicName": "Currency",
+        "id": "cy"
+      },
+      {
+        "topicName": "Date",
+        "id": "date"
+      },
+      {
+        "topicName": "OrderBy",
+        "id": "ob"
+      },
+      {
+        "topicName": "Filter",
+        "id": "filter"
+      },
+      {
+        "topicName": "Number",
+        "id": "number"
+      },
+      {
+        "topicName": "LimitTo",
+        "id": "limitTo"
+      },
+      {
+        "topicName": "Chaining OF Filters",
+        "id": "chaining"
+      }
+    ]
+  }
+]
