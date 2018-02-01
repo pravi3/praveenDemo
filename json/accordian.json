@@ -83,6 +83,10 @@
       {
         "topicName": "Chaining OF Filters",
         "id": "chaining"
+      },
+      {
+        "topicName": "$CustomFilter Example",
+        "id": "customFilter"
       }
     ]
   }

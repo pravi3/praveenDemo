@@ -63,5 +63,6 @@ app.controller('common-ctrl', ['$scope', 'sUtility', function ($scope, sUtility)
       "country" : "Sweden"
     },
   ]
+
         
 }]);
