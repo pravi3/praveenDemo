@@ -89,5 +89,16 @@
         "id": "customFilter"
       }
     ]
+  },
+    {
+    "topicName": "Validation",
+    "referenceId": "validation",
+    "topics": [
+      
+      {
+        "topicName": "NgMessages",
+        "id": "ngMessages"
+      }
+    ]
   }
 ]

@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'ngAnimate']);
+var app = angular.module('app', ['ui.router', 'ui.bootstrap', 'ngAnimate','ngMessages']);
 
 app.run(['$anchorScroll', function ($anchorScroll) {
     $anchorScroll.yOffset = 65; // always scroll by 65 extra pixels
@@ -21,6 +21,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     .state('agFilter',{
         url: '/agFilter',
         templateUrl: 'views/filter.html',
+        controller: 'common-ctrl'
+    })
+    .state('validation',{
+        url: '/validation',
+        templateUrl: 'views/validation.html',
         controller: 'common-ctrl'
     })
 
