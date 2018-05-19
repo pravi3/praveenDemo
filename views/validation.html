@@ -1,111 +1,170 @@
 <script type="text/ng-template" id="internalvalidation.html">
-            <p ng-message="required">This field required by internalvalidation.html</p>
-            <p ng-message="minlength">This field is too short by internalvalidation.html</p>
-            <p ng-message="maxlength">This field is too long by internalvalidation.html</p>
-            <p ng-message="email">This needs to be a valid email by internalvalidation.html</p>
-        
-        </script>
-        <br><br>
-       <h4>Please Refer Back end code for better understanding</h4>
-        <!-- create our form -->
-       <!-- novalidate : Disableing Browser Validation-->
-    <div class="container">
-    <div>
-        <div class="col-md-8">
-            <form name="userForm" novalidate>
-        
-        <!-- name field -->
-        <div class="form-group" ng-class="{ 'has-error': userForm.name.$touched && userForm.name.$invalid ,'has-success':userForm.name.$valid}">
-            <label>Name</label>
-            <input type="text" name="name" class="form-control" 
-                ng-model="name"
-                ng-minlength="5"
-                ng-maxlength="20"
-                required>
-                
-            <!-- ngMessages goes here -->
-            <div class="help-block" ng-messages="userForm.name.$error" ng-class="{'text-style':userForm.name.$error}" ng-show="userForm.name.$touched">
-                <p ng-message="email">This needs to be a valid email</p>
-                <div ng-messages-include="views/externalMessageValidation.html"></div>
-            </div>
-            
-        </div>
-        <!-- email field -->
-        <div class="form-group"  ng-class="{ 'has-error': userForm.email.$touched && userForm.email.$invalid ,'has-success':userForm.email.$valid }">
-            <label>Email</label>
-            <input type="email" name="email" class="form-control" 
-                ng-model="email"
-                ng-minlength="5"
-                ng-maxlength="20"
-                required>
-                
-            <!-- ngMessages goes here -->
-            <div class="help-block" ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
-               <p ng-message="email">This needs to be a valid email</p>
-              <div ng-messages-include="internalvalidation.html"></div>
-            
-            </div>
-        </div>
-        
-         <div class="form-group"  ng-class="{ 'has-error': userForm.password.$touched && userForm.password.$invalid }">
-            <label>Password</label>
-            <input type="password" name="password" class="form-control" 
-                ng-model="password"
-                ng-minlength="5"
-                ng-maxlength="20"
-                required
-               >
-            <!-- ngMessages goes here -->
-            <div class="help-block" ng-messages="userForm.password.$error" ng-if="userForm.password.$touched">
-                <p ng-message="required">This field is required l</p>
-                <p ng-message="minlength">This field is too short </p>
-                <p ng-message="maxlength">This field is too long</p>
-                <p ng-message="required">This field is required </p>
-            </div>
-        </div>
-        
-         <div class="form-group"  ng-class="{ 'has-error': userForm.rePassword.$touched && userForm.email.$invalid }">
-            <label>Password</label>
-            <input type="password" name="rePassword" class="form-control" 
-                ng-model="password"
-                ng-minlength="5"
-                ng-maxlength="20"
-                required
-               >
-            <!-- ngMessages goes here -->
-            <div class="help-block" ng-messages="userForm.rePassword.$error" ng-if="userForm.rePassword.$touched">
-                <p ng-message="required">This field is required l</p>
-                <p ng-message="minlength">This field is too short </p>
-                <p ng-message="maxlength">This field is too long</p>
-            </div>
-        </div>
-        
-        <div class="form-group"  ng-class="{ 'has-error': userForm.test.$touched && userForm.test.$invalid }">
-            <label>Validation</label>
-            <input type="type" name="test" class="form-control" 
-                ng-model="test"
-                ng-minlength="1"
-                ng-maxlength="20"
-                required
-                ng-pattern="/^[a-zA-Z1-9 ]*[a-zA-Z]$/"
-               >
-            <!-- ngMessages goes here -->
-            <div class="help-block" ng-messages="userForm.test.$error" ng-if="userForm.test.$touched">
-                <p ng-message="required">This field is required l</p>
-                <p ng-message="minlength">This field is too short </p>
-                <p ng-message="maxlength">This field is too long</p>
-                <p ng-message="required">This field is required </p>
-                <p ng-message="pattern">No Special characters Allowed </p>
-            </div>
-        </div>
-        <div class="form-group">
-            <button ng-disabled="userForm.$invalid" type="submit" class="btn btn-danger">Submit</button>
-        </div>
-       <!-- {{userForm.$error|json}}-->
-       <!-- {{userForm}}-->
-    </form>
+    <p ng-message="required">This field required by internalvalidation.html</p>
+    <p ng-message="minlength">This field is too short by internalvalidation.html</p>
+    <p ng-message="maxlength">This field is too long by internalvalidation.html</p>
+    <p ng-message="email">This needs to be a valid email by internalvalidation.html</p>
+
+</script>
+<br><br>
+<h4>Please Refer Back end code for better understanding</h4>
+<!-- create our form -->
+<!-- novalidate : Disableing Browser Validation-->
+<div class="container">
+    <div class="row">
+       <div class="col-md-7">
+
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <td>
+                            Property
+                        </td>
+                        <td>
+                            Class
+                        </td>
+                        <td>
+                            Description
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="success">
+                            $valid
+                        </td>
+                        <td>
+                            ng-valid
+                        </td>
+                        <td>
+                            <em class="text-info">Boolean</em> Tells whether an item is currently valid based on the rules you placed.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="danger">
+                            $invalid
+                        </td>
+                        <td>
+                            ng-invalid
+                        </td>
+                        <td>
+                            <em class="text-info">Boolean</em> Tells whether an item is currently invalid based on the rules you placed.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="active">
+                            $pristine
+                        </td>
+                        <td>
+                            ng-pristine
+                        </td>
+                        <td>
+                            <em class="text-info">Boolean</em> True if the form/input <strong>has not</strong> been used yet.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="warning">
+                            $dirty
+                        </td>
+                        <td>
+                            ng-dirty
+                        </td>
+                        <td>
+                            <em class="text-info">Boolean</em> True if the form/input <strong>has</strong> been used.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="warning">
+                            $touched
+                        </td>
+                        <td>
+                            ng-touched
+                        </td>
+                        <td>
+                            <em class="text-info">Boolean</em> True if the input <strong>has</strong> been blurred.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
-    
-</div>
+    <h4>Example : </h4>
+    <div class="row">
+        <div class="col-md-5">
+            <form name="userForm" novalidate>
+
+                <!-- name field -->
+                <div class="form-group" ng-class="{ 'has-error': userForm.name.$touched && userForm.name.$invalid ,'has-success':userForm.name.$valid}">
+                    <label>Name</label>
+                    <input type="text" name="name" class="form-control" ng-model="name" ng-minlength="5" ng-maxlength="20" required>
+                    
+                    
+                    
+                    <!-- ngMessages goes here -->
+                    <div class="help-block" ng-messages="userForm.name.$error" ng-class="{'text-style':userForm.name.$error}" ng-show="userForm.name.$touched">
+                        <p ng-message="email">This needs to be a valid email</p>
+                        <div ng-messages-include="views/externalMessageValidation.html"></div>
+                    </div>
+
+                </div>
+               
+                <!-- email field -->
+                <div class="form-group" ng-class="{ 'has-error': userForm.email.$touched && userForm.email.$invalid ,'has-success':userForm.email.$valid }">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control" ng-model="email" ng-minlength="5" ng-maxlength="20" required>
+
+                    <!-- ngMessages goes here -->
+                    <div class="help-block" ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
+                        <p ng-message="email">This needs to be a valid email</p>
+                       
+                        <div ng-messages-include="internalvalidation.html"></div>
+
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error': userForm.password.$touched && userForm.password.$invalid ,
+                   'has-`':userForm.password.$valid}">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control" ng-model="password" ng-minlength="5" ng-maxlength="20" required>
+                    <!-- ngMessages goes here -->
+                    <div class="help-block" ng-messages="userForm.password.$error" ng-if="userForm.password.$touched">
+                        <p ng-message="required">This field is required</p>
+                        <p ng-message="minlength">This field is too short </p>
+                        <p ng-message="maxlength">This field is too long</p>
+                        <p ng-message="required">This field is required </p>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error': userForm.rePassword.$touched && userForm.email.$invalid }">
+                    <label>Password</label>
+                    <input type="password" name="rePassword" class="form-control" ng-model="repassword" ng-minlength="5" ng-maxlength="20" required>
+                    <!-- ngMessages goes here -->
+                    <div class="help-block" ng-messages="userForm.rePassword.$error" ng-if="userForm.rePassword.$touched && userForm.password!=userFrom.rePassword">
+                        <p ng-message="required">This field is required l</p>
+                        <p ng-message="minlength">This field is too short </p>
+                        <p ng-message="maxlength">This field is too long</p>
+                    </div>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error': userForm.test.$touched && userForm.test.$invalid }">
+                    <label>Validation</label>
+                    <input type="type" name="test" class="form-control" ng-model="test" ng-minlength="1" ng-maxlength="20" required ng-pattern="/^[a-zA-Z1-9 ]*[a-zA-Z]$/">
+                    <!-- ngMessages goes here -->
+                    <div class="help-block" ng-messages="userForm.test.$error" ng-if="userForm.test.$touched">
+                        <p ng-message="required">This field is required l</p>
+                        <p ng-message="minlength">This field is too short </p>
+                        <p ng-message="maxlength">This field is too long</p>
+                        <p ng-message="required">This field is required </p>
+                        <p ng-message="pattern">No Special characters Allowed </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button ng-disabled="userForm.$invalid" type="submit" class="btn btn-danger">Submit</button>
+                </div>
+                <!-- {{userForm.$error|json}}-->
+                <!-- {{userForm}}-->
+            </form>
+        </div>
         
+    </div>
+{{userForm.$error|json}}
+</div>
