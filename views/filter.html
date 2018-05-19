@@ -1,7 +1,7 @@
+<h2>
 
-
-<h2>Welcome To Filter Examples</h2>
-   <div ><br><br>
+    Welcome To Filter Examples</h2>
+<div><br><br>
     <a ng-click="scrollTo('uc')">$UpperCase</a><br>
     <a ng-click="scrollTo('lc')">$LowerCase</a><br>
     <a ng-click="scrollTo('cy')">$Currency</a><br>
@@ -15,325 +15,366 @@
 
     <hr>
     <input type="text" class="form-control" ng-model="filterInput" placeholder="Enter Input here"><br>
-    <hr>
+
 
     <!--<hr>
             <strong>Custom Filter </strong><br>
             {{"touppercase"|charuppercase:79}}-->
     <hr>
     <div class="container">
-        <div class="row">
-            <div class="col-md-4" id="uc">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Upper Case (Enter Some Value in Inputbox)</div>
-                    <div class="panel-body">
-                        {{filterInput|uppercase}}
+        <div class="panel panel-default">
+            <div class="panel-heading">Upper Case and Lower Case</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4" id="uc">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Upper Case (Enter Some Value in Inputbox)</div>
+                            <div class="panel-body">
+                                {{filterInput|uppercase}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="lc">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Lower Case (Enter Some Value in Inputbox)</div>
+                            <div class="panel-body">
+                                {{filterInput|lowercase}}
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4" id="lc">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Lower Case (Enter Some Value in Inputbox)</div>
-                    <div class="panel-body">
-                        {{filterInput|lowercase}}
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Arguments to filter can be passed by appending ':' in front of filter name example is 'limitTo:5'
+                            </div>
+                            <div class="panel-body">
+                                <p>Input data {{filterInput}}</p>
+                                <p>Filter out is {{filterInput | limitTo:5}}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+
             </div>
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Arguments to filter can be passed by appending ':' in front of filter name example is 'limitTo:5'
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Number and Currency Filter Example</div>
+            <div class="panel-body">
+                <div class="row" id="number">
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Number</div>
+                            <div class="panel-body">
+                                <p>Input data 1234567787.22000555000</p>
+                                <p>Filter out is {{1234567787.22000555000|number}}</p>
+
+                            </div>
+                        </div>
                     </div>
-                    <div class="panel-body">
-                        <p>Input data {{filterInput}}</p>
-                        <p>Filter out is {{filterInput | limitTo:5}}</p>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Number: Passing argument to Filter</div>
+                            <div class="panel-body">
+                                <p>Input data 1234567787.22000555000</p>
+                                <p>Filter out is {{1234567787.22000555000|number:2}}</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row" id="cy">
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Currency</div>
+                            <div class="panel-body">
+                                <p>Input data 1234567787.22</p>
+                                <p>Filter out is {{1234567787.22|currency}}</p>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Currency: Passing argument to Filter </div>
+                            <div class="panel-body">
+                                <p>Input data {{1234567787.22333|currency:'@':2}}</p>
+                                <p>Filter out is {{1234567787.22333|currency:'@':2}}</p>
+
+
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row" id="number">
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Number</div>
-                    <div class="panel-body">
-                       <p>Input data 1234567787.22000555000</p>
-                        <p>Filter out is {{1234567787.22000555000|number}}</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Number: Passing argument to Filter</div>
-                    <div class="panel-body">
-                        <p>Input data 1234567787.22000555000</p>
-                        <p>Filter out is {{1234567787.22000555000|number:2}}</p>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-       <div class="row" id="cy">
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Currency</div>
-                    <div class="panel-body">
-                        <p>Input data 1234567787.22</p>
-                        <p>Filter out is  {{1234567787.22|currency}}</p>
-                        
-                    </div>
-                </div>
 
-            </div>
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Currency: Passing argument to Filter </div>
-                    <div class="panel-body">
-                        <p>Input data  {{1234567787.22333|currency:'@':2}}</p>
-                        <p>Filter out is   {{1234567787.22333|currency:'@':2}}</p>
-                        
-                       
-                    </div>
-                </div>
 
-            </div>
-        </div>
-        <div class="row" id="date">
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Date Filter</div>
-                    <div class="panel-body">
-                        <p>Input data  {{1288323623006 | date}}</p>
-                        <p>Filter out is   {{1288323623006 | date}}</p>
-                        
+        <div class="panel panel-default">
+            <div class="panel-heading">Date Filter</div>
+            <div class="panel-body">
+                <div class="row" id="date">
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Date Filter</div>
+                            <div class="panel-body">
+                                <p>Input data {{1288323623006 | date}}</p>
+                                <p>Filter out is {{1288323623006 | date}}</p>
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Date Filter: Passing Argument to Date Filter</div>
-                    <div class="panel-body">
-                        <p>Input data   {{1288323623006 | date:'medium'}}</p>
-                        <p>Filter out is    {{1288323623006 | date:'medium'}}</p>
-                        
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Date Filter: Passing Argument to Date Filter</div>
+                            <div class="panel-body">
+                                <p>Input data {{1288323623006 | date:'medium'}}</p>
+                                <p>Filter out is {{1288323623006 | date:'medium'}}</p>
+
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Date Filter: Passing Argument to Date Filter</div>
-                    <div class="panel-body">
-                       <p>Input data   {{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</p>
-                        <p>Filter out is    {{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</p>
-                        
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Date Filter: Passing Argument to Date Filter</div>
+                            <div class="panel-body">
+                                <p>Input data {{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</p>
+                                <p>Filter out is {{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</p>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row" id="limitTo">
 
-        </div>
 
-        <div class="row" id="filter">
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Filter By any one property of object: Example by Name</div>
-                    <div class="panel-body">
-                        <input type="text" ng-model="search.name" class="form-control" placeholder="Search Input">
-                        <br>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Country</th>
+        <div class="panel panel-default">
+            <div class="panel-heading"> Filter and LimitTo Example</div>
+            <div class="panel-body">
+                <div class="row" id="filter">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Filter By any one property of object: Example by Name</div>
+                            <div class="panel-body">
+                                <input type="text" ng-model="search.name" class="form-control" placeholder="Search Input">
+                                <br>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Country</th>
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat=" record in records|filter:search|orderBy:'-name'|limitTo:4">
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat=" record in records|filter:search|orderBy:'-name'|limitTo:4">
 
-                                    <td>{{record.name}}</td>
-                                    <td>{{record.country}}</td>
-                                </tr>
+                                            <td>{{record.name}}</td>
+                                            <td>{{record.country}}</td>
+                                        </tr>
 
-                            </tbody>
-                        </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Filter By Any Property of object</div>
+                            <div class="panel-body">
+                                <input type="text" ng-model="search.$" class="form-control" placeholder="Search Input">
+                                <br>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Country</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat=" record in records|filter:search|orderBy:'-name'|limitTo:4">
+
+                                            <td>{{record.name}}</td>
+                                            <td>{{record.country}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Filter By Any Property of object</div>
-                    <div class="panel-body">
-                        <input type="text" ng-model="search.$" class="form-control" placeholder="Search Input">
-                        <br>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Country</th>
+                <hr>
+                <div class="row" id="limitTo">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Limtit Object from top</div>
+                            <div class="panel-body">
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat=" record in records|filter:search|orderBy:'-name'|limitTo:4">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Country</th>
 
-                                    <td>{{record.name}}</td>
-                                    <td>{{record.country}}</td>
-                                </tr>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat=" record in records|limitTo:3">
 
-                            </tbody>
-                        </table>
+                                            <td>{{record.name}}</td>
+                                            <td>{{record.country}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" id="ob">
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Order Array of objects in Assending order</div>
-                    <div class="panel-body">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Limit Objects from Bottom of Array</div>
+                            <div class="panel-body">
+                                <input type="text" ng-model="search.name" class="form-control" placeholder="Search Input">
+                                <br>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Country</th>
 
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Country</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat=" record in records|limitTo:-3">
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat=" record in records|filter:search">
+                                            <td>{{record.name}}</td>
+                                            <td>{{record.country}}</td>
+                                        </tr>
 
-                                    <td>{{record.name}}</td>
-                                    <td>{{record.country}}</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Order Array of objects in Decending order</div>
-                    <div class="panel-body">
-                        <input type="text" ng-model="search.name" class="form-control" placeholder="Search Input">
-                        <br>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Country</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat=" record in records|orderBy:'-name'">
-
-                                    <td>{{record.name}}</td>
-                                    <td>{{record.country}}</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row" id="limitTo">
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Limtit Object from top</div>
-                    <div class="panel-body">
-
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Country</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat=" record in records|limitTo:3">
-
-                                    <td>{{record.name}}</td>
-                                    <td>{{record.country}}</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Limit Objects from Bottom of Array</div>
-                    <div class="panel-body">
-                        <input type="text" ng-model="search.name" class="form-control" placeholder="Search Input">
-                        <br>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Country</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat=" record in records|limitTo:-3">
-
-                                    <td>{{record.name}}</td>
-                                    <td>{{record.country}}</td>
-                                </tr>
-
-                            </tbody>
-                        </table>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row" id="chaining">
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Chaining of Filters</div>
-                    <div class="panel-body">
-                        <strong>Filters can be chanined with the help of '|' <br> Here in below example Three filters are chained Like Filter,OrderBy and LimitTo, <br> Output of one Filter is Input to other Filter</strong>
-                        <br>
-                        <input type="text" ng-model="search.$" class="form-control" placeholder="Search Input">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Country</th>
+        <div class="panel panel-default">
+            <div class="panel-heading"> OrderBy filter Example</div>
+            <div class="panel-body">
+                <div class="row" id="ob">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Order Array of objects in Assending order</div>
+                            <div class="panel-body">
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat=" record in records|filter:search|orderBy:'name':limitTo:3">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Country</th>
 
-                                    <td>{{record.name}}</td>
-                                    <td>{{record.country}}</td>
-                                </tr>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat=" record in records|filter:search">
 
-                            </tbody>
-                        </table>
+                                            <td>{{record.name}}</td>
+                                            <td>{{record.country}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Order Array of objects in Decending order</div>
+                            <div class="panel-body">
+                                <input type="text" ng-model="search.name" class="form-control" placeholder="Search Input">
+                                <br>
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Country</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat=" record in records|orderBy:'-name'">
+
+                                            <td>{{record.name}}</td>
+                                            <td>{{record.country}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading"> Chaining of filters Example</div>
+            <div class="panel-body">
+                <div class="row" id="chaining">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Chaining of Filters</div>
+                            <div class="panel-body">
+                                <strong>Filters can be chanined with the help of '|' <br> Here in below example Three filters are chained Like Filter,OrderBy and LimitTo, <br> Output of one Filter is Input to other Filter</strong>
+                                <br>
+                                <input type="text" ng-model="search.$" class="form-control" placeholder="Search Input">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Country</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat=" record in records|filter:search|orderBy:'name':limitTo:3">
+
+                                            <td>{{record.name}}</td>
+                                            <td>{{record.country}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <hr>
-        <h3>Custom Filter Example</h3>
-           <div class="row" id="customFilter">
-               <div class="col-md-3">Filter Capatalizes Mentioned Character of word.
-                   if length doesn't matches it just returns input as it is.
-               </div>
-               <div class="col-md-3">=====>&nbsp;example : abcd:2 : {{'abcd'|charuppercase:2}} <br>
+        <div class="panel panel-default">
+            <div class="panel-heading"> Custom  filter Example</div>
+            <div class="panel-body">
 
-               =====>&nbsp;abcd:5 : {{'abcd'|charuppercase:5}}</div>
-           </div>
+                <div class="row" id="customFilter">
+                    <div class="col-md-3">Filter Capatalizes Mentioned Character of word. if length doesn't matches it just returns input as it is.
+                    </div>
+                    <div class="col-md-3">=====>&nbsp;example : abcd:2 : {{'abcd'|charuppercase:2}} <br> =====>&nbsp;abcd:5 : {{'abcd'|charuppercase:5}}</div>
+                </div>
+            </div>
+        </div>
 
     </div>
 
