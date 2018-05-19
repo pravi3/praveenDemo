@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-md-4" id="uc">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Upper Case</div>
+                    <div class="panel-heading">Upper Case (Enter Some Value in Inputbox)</div>
                     <div class="panel-body">
                         {{filterInput|uppercase}}
                     </div>
@@ -33,7 +33,7 @@
             </div>
             <div class="col-md-4" id="lc">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Lower Case</div>
+                    <div class="panel-heading">Lower Case (Enter Some Value in Inputbox)</div>
                     <div class="panel-body">
                         {{filterInput|lowercase}}
                     </div>
@@ -42,10 +42,11 @@
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Limiting :Argument to filter is passed by appending : in front of filter name example is 'filterInput | limitTo:5'
+                    <div class="panel-heading">Arguments to filter can be passed by appending ':' in front of filter name example is 'limitTo:5'
                     </div>
                     <div class="panel-body">
-                        {{filterInput | limitTo:5}}
+                        <p>Input data {{filterInput}}</p>
+                        <p>Filter out is {{filterInput | limitTo:5}}</p>
                     </div>
                 </div>
             </div>
@@ -55,7 +56,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Number</div>
                     <div class="panel-body">
-                        {{1234567787.22000555000|number}}
+                       <p>Input data 1234567787.22000555000</p>
+                        <p>Filter out is {{1234567787.22000555000|number}}</p>
+                        
                     </div>
                 </div>
             </div>
@@ -63,7 +66,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Number: Passing argument to Filter</div>
                     <div class="panel-body">
-                        {{1234567787.22000555000|number:2}}
+                        <p>Input data 1234567787.22000555000</p>
+                        <p>Filter out is {{1234567787.22000555000|number:2}}</p>
+                        
                     </div>
                 </div>
             </div>
@@ -73,7 +78,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Currency</div>
                     <div class="panel-body">
-                        {{1234567787.22|currency}}
+                        <p>Input data 1234567787.22</p>
+                        <p>Filter out is  {{1234567787.22|currency}}</p>
+                        
                     </div>
                 </div>
 
@@ -82,7 +89,10 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Currency: Passing argument to Filter </div>
                     <div class="panel-body">
-                        {{1234567787.22333|currency:'@':2}}
+                        <p>Input data  {{1234567787.22333|currency:'@':2}}</p>
+                        <p>Filter out is   {{1234567787.22333|currency:'@':2}}</p>
+                        
+                       
                     </div>
                 </div>
 
@@ -93,7 +103,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Date Filter</div>
                     <div class="panel-body">
-                        {{1288323623006 | date}}
+                        <p>Input data  {{1288323623006 | date}}</p>
+                        <p>Filter out is   {{1288323623006 | date}}</p>
+                        
                     </div>
                 </div>
             </div>
@@ -101,7 +113,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Date Filter: Passing Argument to Date Filter</div>
                     <div class="panel-body">
-                        {{1288323623006 | date:'medium'}}
+                        <p>Input data   {{1288323623006 | date:'medium'}}</p>
+                        <p>Filter out is    {{1288323623006 | date:'medium'}}</p>
+                        
                     </div>
                 </div>
             </div>
@@ -109,7 +123,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Date Filter: Passing Argument to Date Filter</div>
                     <div class="panel-body">
-                        {{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}
+                       <p>Input data   {{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</p>
+                        <p>Filter out is    {{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</p>
+                        
                     </div>
                 </div>
             </div>
